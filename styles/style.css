@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* 2. Estilos Gerais (Corpo da Página) */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Cor de fundo da imagem de inspiração */
+    background-color: #F5F0E8; 
+    /* Truque para centralizar o conteúdo perfeitamente na vertical e horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 3. Container Principal */
+.login-container {
+    /* Alinha os itens (logo, form) no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* Largura máxima do container de login */
+}
+
+/* 4. Logo */
+.logo {
+    width: 400px; /* Tamanho da logo */
+    margin-bottom: 10px; /* Espaço entre a logo e o formulário */
+}
+
+/* 5. Estilo dos Campos de Input (Usuário e Senha) */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaço entre os campos */
+    border-radius: 50px; /* Deixa as bordas totalmente arredondadas */
+    border: 1px solid #2F4156; /* Cor da borda */
+    background-color: transparent; /* Fundo transparente */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estiliza o texto do placeholder */
+::placeholder {
+    color: #2F4156;
+    opacity: 0.7;
+}
+
+/* Melhora a acessibilidade quando o campo está focado (clicado) */
+input:focus {
+    outline: none;
+    border-color: #517194; 
+}
+
+/* 6. Botão de Envio */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: #2F4156; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    font-size: 16px;
+    font-weight: 600; /* Deixa o texto um pouco mais forte */
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    transition: background-color 0.3s ease; /* Efeito suave na transição */
+}
+
+/* Efeito visual ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #3b526d;
+}
