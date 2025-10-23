@@ -74,3 +74,113 @@ button {
 button:hover {
     background-color: #3b526d;
 }
+.sidebar {
+    position: fixed; /* Fixa a sidebar na tela */
+    left: 0;
+    top: 0;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 280px; /* Largura da sidebar */
+    background-color: #4A6076; /* Cor de fundo da sua imagem */
+    padding: 20px;
+    color: white; /* Cor do texto e ícones */
+}
+
+/* Cabeçalho com a logo e o título */
+.sidebar-header {
+    display: flex; /* Alinha a logo e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 40px; /* Espaço abaixo do cabeçalho */
+}
+
+.sidebar-header img {
+    width: 100px; /* Tamanho da logo */
+    margin-right: 15px; /* Espaço entre a logo e o texto */
+}
+
+.sidebar-header h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+/* Lista de links de navegação */
+.nav-links {
+    list-style: none; /* Remove as bolinhas da lista */
+}
+
+.nav-links li {
+    margin-bottom: 10px; /* Espaço entre cada item do menu */
+}
+
+.nav-links a {
+    display: flex; /* Alinha o ícone e o texto do link */
+    align-items: center;
+    color: white; /* Garante que o link seja branco */
+    text-decoration: none; /* Remove o sublinhado do link */
+    padding: 12px 15px;
+    border-radius: 8px; /* Bordas arredondadas para o efeito hover */
+    transition: background-color 0.3s ease; /* Efeito suave */
+}
+
+/* Efeito ao passar o mouse */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Um branco semi-transparente */
+}
+
+/* Ícones dentro dos links */
+.nav-links a i {
+    font-size: 1.2em; /* Tamanho do ícone */
+    margin-right: 20px; /* Espaço entre o ícone e o texto */
+    width: 25px; /* Define uma largura fixa para que todos os textos fiquem alinhados */
+    text-align: center;
+}
+
+.nav-links a span {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.user-profile {
+    position: absolute; /* Posição absoluta em relação à página */
+    top: 30px;          /* Distância de 30px do topo */
+    right: 40px;        /* Distância de 40px da borda direita */
+}
+
+.user-profile a {
+    text-decoration: none;
+    /* Cor escura do seu tema, para contrastar com o fundo claro */
+    color: #2F4156;    
+}
+
+.user-profile i {
+    font-size: 1.8em;   /* Deixa o ícone um pouco maior e mais destacado */
+    transition: color 0.3s ease; /* Efeito suave na mudança de cor */
+}
+
+/* Efeito ao passar o mouse por cima */
+.user-profile a:hover i {
+    color: #517194; /* Pode ser uma versão um pouco mais clara da cor principal */
+}
+
+.content-main {
+    margin-left: 280px; /* A mesma largura que você definiu para a .sidebar */
+    padding: 30px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    flex-direction: column;
+    /* Define a altura do container como 100% da altura da tela */
+    height: 100vh;      /* Um espaçamento interno para o conteúdo respirar */
+}
+
+.content-main h1{
+    color: #2F4156;
+    font-weight: bold;
+    display: flex;
+    margin: 0;
+}
+.content-main h2{
+    color: #2F4156;
+    font-weight: bold;
+    display: flex;
+    
+}
