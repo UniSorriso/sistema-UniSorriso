@@ -184,3 +184,60 @@ button:hover {
     display: flex;
     
 }
+
+
+/* 2. Estilo do menu dropdown (cores, sombra, etc.) */
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    z-index: 1000;
+    overflow: hidden;
+
+    /* 3. ESCONDE o menu por padrão */
+    /* Usamos opacity e visibility para permitir uma transição suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* Efeito sutil de deslizar para baixo */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* 4. A MÁGICA ACONTECE AQUI: MOSTRA o menu ao passar o mouse */
+/* "Quando o mouse estiver sobre .user-profile, encontre o .dropdown-menu dentro dele e aplique estes estilos" */
+.user-profile:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Volta à posição original */
+}
+
+
+/* --- Estilos internos do menu (permanecem os mesmos) --- */
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #3d526b;
+    font-size: 0.9em;
+}
+
+.dropdown-menu ul li a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu ul li a i {
+    margin-right: 15px;
+    width: 20px;
+}
+
