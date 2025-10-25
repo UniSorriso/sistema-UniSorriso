@@ -36,7 +36,7 @@ input[type="password"] {
     padding: 15px 20px; /* Espaçamento interno */
     margin-bottom: 15px; /* Espaço entre os campos */
     border-radius: 50px; /* Deixa as bordas totalmente arredondadas */
-    border: 1px solid #2F4156; /* Cor da borda */
+    border: 1px solid #0c2c47; /* Cor da borda */
     background-color: transparent; /* Fundo transparente */
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
@@ -45,14 +45,14 @@ input[type="password"] {
 
 /* Estiliza o texto do placeholder */
 ::placeholder {
-    color: #2F4156;
+    color: #0c2c47;
     opacity: 0.7;
 }
 
 /* Melhora a acessibilidade quando o campo está focado (clicado) */
 input:focus {
     outline: none;
-    border-color: #517194; 
+    border-color: #0c2c47; 
 }
 
 /* 6. Botão de Envio */
@@ -61,7 +61,7 @@ button {
     padding: 15px;
     border: none;
     border-radius: 50px;
-    background-color: #2F4156; /* Cor de fundo do botão */
+    background-color: #0c2c47; /* Cor de fundo do botão */
     color: white; /* Cor do texto do botão */
     font-size: 16px;
     font-weight: 600; /* Deixa o texto um pouco mais forte */
@@ -72,7 +72,7 @@ button {
 
 /* Efeito visual ao passar o mouse sobre o botão */
 button:hover {
-    background-color: #3b526d;
+    background-color: #0c2c47;
 }
 .sidebar {
     position: fixed; /* Fixa a sidebar na tela */
@@ -80,7 +80,7 @@ button:hover {
     top: 0;
     height: 100vh; /* Ocupa 100% da altura da tela */
     width: 280px; /* Largura da sidebar */
-    background-color: #4A6076; /* Cor de fundo da sua imagem */
+    background-color: #0c2c47; /* Cor de fundo da sua imagem */
     padding: 20px;
     color: white; /* Cor do texto e ícones */
 }
@@ -148,7 +148,7 @@ button:hover {
 .user-profile a {
     text-decoration: none;
     /* Cor escura do seu tema, para contrastar com o fundo claro */
-    color: #2F4156;    
+    color: #0c2c47;    
 }
 
 .user-profile i {
@@ -158,10 +158,11 @@ button:hover {
 
 /* Efeito ao passar o mouse por cima */
 .user-profile a:hover i {
-    color: #517194; /* Pode ser uma versão um pouco mais clara da cor principal */
+    color: #1a3d63; /* Pode ser uma versão um pouco mais clara da cor principal */
 }
 
 .content-main {
+    animation: fadeIn 0.7s ease-out forwards;
     margin-left: 280px; /* A mesma largura que você definiu para a .sidebar */
     padding: 30px;
     display: flex;
@@ -173,20 +174,18 @@ button:hover {
 }
 
 .content-main h1{
-    color: #2F4156;
+    color: #0c2c47;
     font-weight: bold;
     display: flex;
     margin: 0;
 }
 .content-main h2{
-    color: #2F4156;
+    color: #0c2c47;
     font-weight: bold;
     display: flex;
     
 }
 
-
-/* 2. Estilo do menu dropdown (cores, sombra, etc.) */
 .dropdown-menu {
     position: absolute;
     top: 50px;
@@ -197,25 +196,17 @@ button:hover {
     min-width: 160px;
     z-index: 1000;
     overflow: hidden;
-
-    /* 3. ESCONDE o menu por padrão */
-    /* Usamos opacity e visibility para permitir uma transição suave */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px); /* Efeito sutil de deslizar para baixo */
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
-/* 4. A MÁGICA ACONTECE AQUI: MOSTRA o menu ao passar o mouse */
-/* "Quando o mouse estiver sobre .user-profile, encontre o .dropdown-menu dentro dele e aplique estes estilos" */
 .user-profile:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Volta à posição original */
+    transform: translateY(0); 
 }
-
-
-/* --- Estilos internos do menu (permanecem os mesmos) --- */
 
 .dropdown-menu ul {
     list-style: none;
@@ -228,7 +219,7 @@ button:hover {
     align-items: center;
     padding: 12px 20px;
     text-decoration: none;
-    color: #3d526b;
+    color: #0c2c47;
     font-size: 0.9em;
 }
 
@@ -241,3 +232,40 @@ button:hover {
     width: 20px;
 }
 
+.corner-shape {
+    position: absolute;
+    width: 30vw; /* Ocupa 30% da largura da tela */
+    max-width: 400px; /* Mas não passa de 400px */
+    z-index: 0; /* Garante que fique atrás do conteúdo de login */
+    
+}
+
+/* Posiciona o primeiro detalhe */
+.corner-shape.top-left {
+    top: 0;
+    left: 0;
+}
+
+/* Posiciona o segundo detalhe */
+.corner-shape.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg); /* Gira o SVG para que fique no canto oposto */
+}
+
+/* Garante que o container de login fique na frente dos detalhes */
+.login-container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
