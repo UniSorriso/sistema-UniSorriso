@@ -259,6 +259,157 @@ button:hover {
     z-index: 1;
 }
 
+.google {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #F5F0E8;
+    border-radius: 50%; /* Deixa o botão redondo */
+    background-color: #F5F0E8;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg'); /* Ícone do Google */
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.google:hover {
+    border-color: #F5F0E8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user-cadastro{
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+#pre-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #F5F0E8; /* Ou use sua variável --bg-primary */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Aplica a animação de desaparecimento em TODAS as cargas de página */
+    animation: hidePreloader 2s forwards;
+}
+
+/* A bola de carregamento (spinner) */
+.loader {
+    border: 8px solid #e0e0e0;
+    border-top: 8px solid #0c2c47; /* Ou use sua variável --text-primary */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.2s linear infinite; /* Animação de rotação */
+}
+
+/* 2. ESTILO DO CONTEÚDO PRINCIPAL */
+/* Por padrão, o conteúdo começa invisível e a animação 'showContent' é aplicada sempre. */
+#page-content {
+    opacity: 0;
+    animation: showContent 1.2s forwards;
+}
+
+.dashboard-cards {
+    display: grid;
+    
+    /* A MÁGICA ESTÁ AQUI: */
+    /* Cria exatamente 2 colunas de tamanho igual (1fr significa 1 fração do espaço) */
+    grid-template-columns: 1fr 1fr; 
+    
+    /* Espaçamento entre as linhas e colunas */
+    gap: 30px; 
+    
+    margin-bottom: 40px;
+}
+
+/* Os estilos individuais do .card permanecem os mesmos */
+.card {
+    background-color: transparent; /* FUNDO TRANSPARENTE, como na imagem */
+    color: var(--text-primary); /* Texto com a cor principal */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+.card .card-value {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+/* 2. Container Branco Principal */
+.report-container {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 20px var(--shadow-color, rgba(0, 0, 0, 0.05));
+}
+
+/* 3. Filtros */
+.report-filters {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.filter-group { display: flex; flex-direction: column; }
+.filter-group label { font-size: 0.9em; font-weight: 500; margin-bottom: 8px; color: var(--text-primary); }
+.filter-group input, .filter-group select { padding: 12px 15px; border: 1.5px solid var(--border-color); border-radius: 8px; background-color: transparent; font-family: 'Poppins', sans-serif; font-size: 1em; color: var(--text-primary); }
+.primary-button { padding: 12px 30px; border: none; border-radius: 8px; background-color: var(--bg-secondary); color: var(--text-secondary); font-family: 'Poppins', sans-serif; font-size: 1em; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease; }
+.primary-button:hover { background-color: var(--text-primary); }
+
+/* 4. Visualização de Dados (Gráfico e Tabela) */
+.report-display h2 { font-size: 1.5em; font-weight: 600; color: var(--text-primary); margin-bottom: 20px; }
+.report-chart { margin-bottom: 40px; }
+.report-table table { width: 100%; border-collapse: collapse; text-align: left; }
+.report-table th, .report-table td { padding: 15px; border-bottom: 1px solid var(--border-color); }
+.report-table thead { background-color: rgba(0, 0, 0, 0.02); }
+.report-table th { font-weight: 600; color: var(--text-primary); }
+.status { padding: 5px 10px; border-radius: 20px; font-size: 0.8em; font-weight: 500; }
+.status.pago { background-color: #d4edda; color: #155724; }
+.status.pendente { background-color: #fff3cd; color: #856404; }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(2000deg); }
+}
+
+/* Animação que esconde o preloader */
+@keyframes hidePreloader {
+    0%   { opacity: 1; visibility: visible; }
+    75%  { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Animação que mostra o conteúdo principal */
+@keyframes showContent {
+    0%   { opacity: 0; }
+    75%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes showContent {
+    0% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
