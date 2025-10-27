@@ -69,5 +69,78 @@
             </li>
         </ul>
     </nav>
+    <main class="content-main">
+        <div class="title-agenda">
+            <h2>Relatorios Financeiros</h2>
+        </div>
+        <section class="dashboard-cards">
+            <div class="card">
+                <h3>Faturamento (Mês)</h3>
+                <p class="card-value">R$ 0,00</p>
+            </div>
+            <div class="card">
+                <h3>Consultas Realizadas</h3>
+                <p class="card-value">0</p>
+            </div>
+            <div class="card">
+                <h3>Pagamentos Pendentes</h3>
+                <p class="card-value">R$ 0,00</p>
+            </div>
+            <div class="card">
+                <h3>Novos Pacientes</h3>
+                <p class="card-value">0</p>
+            </div>
+        </section>
+
+        <div class="report-container">
+            <section class="report-filters">
+                <div class="filter-group">
+                    <label for="data-inicio">Data de Início</label>
+                    <input type="date" id="data-inicio">
+                </div>
+                <div class="filter-group">
+                    <label for="data-fim">Data de Fim</label>
+                    <input type="date" id="data-fim">
+                </div>
+                <div class="filter-group">
+                    <label for="tipo-relatorio">Tipo de Relatório</label>
+                    <select id="tipo-relatorio">
+                        <option>Geral</option>
+                        <option>Por Profissional</option>
+                        <option>Por Procedimento</option>
+                    </select>
+                </div>
+                <button class="primary-button">Gerar Relatório</button>
+            </section>
+        <div class="report-table">
+                    <h2>Detalhes do Período</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Paciente</th>
+                                <th>Procedimento</th>
+                                <th>Valor (R$)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>26/10/2025</td>
+                                <td>PACIENTE TESTE 1</td>
+                                <td>Limpeza de Rotina</td>
+                                <td>R$ 150,00</td>
+                                <td><span class="status pago">Pago</span></td>
+                            </tr>
+                            <tr>
+                                <td>25/10/2025</td>
+                                <td>PACIENTE TESTE 2</td>
+                                <td>Restauração</td>
+                                <td>R$ 300,00</td>
+                                <td><span class="status pendente">Pendente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+    </main>
 </body>
 </html>
