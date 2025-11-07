@@ -1,422 +1,366 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* 2. Estilos Gerais (Corpo da Página) */
+/* ==========================================================================
+   1. REGRAS GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --bg-primary: #F5F0E8;
+    --bg-secondary: #0c2c47;
+    --text-primary: #0c2c47; /* Azul escuro para títulos e textos principais */
+    --text-light: #FFFFFF;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    /* Cor de fundo da imagem de inspiração */
-    background-color: #F5F0E8; 
-    /* Truque para centralizar o conteúdo perfeitamente na vertical e horizontal */
+    background-color: var(--bg-primary);
+    margin: 0;
+}
+
+/* GARANTE QUE TODOS OS ELEMENTOS USEM POPPINS */
+button, input, select, textarea, .action-btn, .primary-button {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================================================
+   2. PÁGINA DE LOGIN (CENTRALIZADA)
+   ========================================================================== */
+.login-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-/* 3. Container Principal */
-.login-container {
-    /* Alinha os itens (logo, form) no centro */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    max-width: 350px; /* Largura máxima do container de login */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
+.logo { width: 400px; margin-bottom: 10px; }
+.user-cadastro, form { width: 100%; max-width: 350px; text-align: center; }
+.corner-shape { position: absolute; width: 30vw; max-width: 400px; z-index: 0; }
+.corner-shape.top-left { top: 0; left: 0; }
+.corner-shape.bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
 
-/* 4. Logo */
-.logo {
-    width: 400px; /* Tamanho da logo */
-    margin-bottom: 10px; /* Espaço entre a logo e o formulário */
-}
-
-/* 5. Estilo dos Campos de Input (Usuário e Senha) */
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 15px 20px; /* Espaçamento interno */
-    margin-bottom: 15px; /* Espaço entre os campos */
-    border-radius: 50px; /* Deixa as bordas totalmente arredondadas */
-    border: 1px solid #0c2c47; /* Cor da borda */
-    background-color: transparent; /* Fundo transparente */
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
-}
-
-/* Estiliza o texto do placeholder */
-::placeholder {
-    color: #0c2c47;
-    opacity: 0.7;
-}
-
-/* Melhora a acessibilidade quando o campo está focado (clicado) */
-input:focus {
-    outline: none;
-    border-color: #0c2c47; 
-}
-
-/* 6. Botão de Envio */
-button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 50px;
-    background-color: #0c2c47; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    font-size: 16px;
-    font-weight: 600; /* Deixa o texto um pouco mais forte */
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer; /* Muda o cursor para uma mãozinha */
-    transition: background-color 0.3s ease; /* Efeito suave na transição */
-}
-
-/* Efeito visual ao passar o mouse sobre o botão */
-button:hover {
-    background-color: #0c2c47;
-}
-.sidebar {
-    position: fixed; /* Fixa a sidebar na tela */
-    left: 0;
-    top: 0;
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    width: 280px; /* Largura da sidebar */
-    background-color: #0c2c47; /* Cor de fundo da sua imagem */
-    padding: 20px;
-    color: white; /* Cor do texto e ícones */
-}
-
-/* Cabeçalho com a logo e o título */
-.sidebar-header {
-    display: flex; /* Alinha a logo e o texto lado a lado */
-    align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 40px; /* Espaço abaixo do cabeçalho */
-}
-
-.sidebar-header img {
-    width: 100px; /* Tamanho da logo */
-    margin-right: 15px; /* Espaço entre a logo e o texto */
-}
-
-.sidebar-header h2 {
-    font-size: 1.3em;
-    font-weight: 600;
-}
-
-/* Lista de links de navegação */
-.nav-links {
-    list-style: none; /* Remove as bolinhas da lista */
-}
-
-.nav-links li {
-    margin-bottom: 10px; /* Espaço entre cada item do menu */
-}
-
-.nav-links a {
-    display: flex; /* Alinha o ícone e o texto do link */
-    align-items: center;
-    color: white; /* Garante que o link seja branco */
-    text-decoration: none; /* Remove o sublinhado do link */
-    padding: 12px 15px;
-    border-radius: 8px; /* Bordas arredondadas para o efeito hover */
-    transition: background-color 0.3s ease; /* Efeito suave */
-}
-
-/* Efeito ao passar o mouse */
-.nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Um branco semi-transparente */
-}
-
-/* Ícones dentro dos links */
-.nav-links a i {
-    font-size: 1.2em; /* Tamanho do ícone */
-    margin-right: 20px; /* Espaço entre o ícone e o texto */
-    width: 25px; /* Define uma largura fixa para que todos os textos fiquem alinhados */
-    text-align: center;
-}
-
-.nav-links a span {
-    font-size: 1em;
-    font-weight: 500;
-}
-
-.user-profile {
-    position: absolute; /* Posição absoluta em relação à página */
-    top: 30px;          /* Distância de 30px do topo */
-    right: 40px;        /* Distância de 40px da borda direita */
-}
-
-.user-profile a {
-    text-decoration: none;
-    /* Cor escura do seu tema, para contrastar com o fundo claro */
-    color: #0c2c47;    
-}
-
-.user-profile i {
-    font-size: 1.8em;   /* Deixa o ícone um pouco maior e mais destacado */
-    transition: color 0.3s ease; /* Efeito suave na mudança de cor */
-}
-
-/* Efeito ao passar o mouse por cima */
-.user-profile a:hover i {
-    color: #1a3d63; /* Pode ser uma versão um pouco mais clara da cor principal */
-}
-
+/* ==========================================================================
+   3. PÁGINAS INTERNAS (CENTRALIZADAS)
+   ========================================================================== */
 .content-main {
-    animation: fadeIn 0.7s ease-out forwards;
-    margin-left: 280px; /* A mesma largura que você definiu para a .sidebar */
-    padding: 30px;
+    margin-left: 280px;
+    padding: 40px;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
     flex-direction: column;
-    /* Define a altura do container como 100% da altura da tela */
-    height: 100vh;      /* Um espaçamento interno para o conteúdo respirar */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    animation: fadeIn 0.7s ease-out forwards;
 }
 
-.content-main h1{
-    color: #0c2c47;
-    font-weight: bold;
-    display: flex;
-    margin: 0;
+/* Em telas menores (altura), permite rolagem em vez de cortar o topo */
+@media (max-height: 800px) {
+    .content-main { justify-content: flex-start; }
 }
+
+/* Títulos Principais (AZUL DA SIDEBAR) */
+.content-main h1, .page-title, .category-title {
+    color: var(--text-primary); /* Usa a variável #0c2c47 */
+    font-weight: bold;
+    margin-top: 0;
+}
+.content-main h1, .page-title { font-size: 2.2em; margin: 0; color:#0c2c47}
 .content-main h2{
     color: #0c2c47;
     font-weight: bold;
     display: flex;
     
 }
+.category-title { font-size: 1.4em; margin-bottom: 20px; align-self: flex-start; /* Alinha títulos de seção à esquerda do container centralizado */ width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;}
 
+/* ==========================================================================
+   4. SIDEBAR E NAVEGAÇÃO
+   ========================================================================== */
+.sidebar {
+    position: fixed; left: 0; top: 0; height: 100vh; width: 280px;
+    background-color: var(--bg-secondary); padding: 20px; color: var(--text-light);
+    z-index: 100;
+}
+.sidebar-header { display: flex; align-items: center; margin-bottom: 40px; }
+.sidebar-header img { width: 100px; margin-right: 15px; }
+.sidebar-header h2 { font-size: 1.3em; font-weight: 600; margin: 0; }
+.nav-links { list-style: none; padding: 0; margin: 0; }
+.nav-links li { margin-bottom: 10px; }
+.nav-links a {
+    display: flex; align-items: center; color: var(--text-light); text-decoration: none;
+    padding: 12px 15px; border-radius: 8px; transition: background-color 0.3s ease;
+}
+.nav-links a:hover { background-color: rgba(255, 255, 255, 0.1); }
+.nav-links a i { font-size: 1.2em; margin-right: 20px; width: 25px; text-align: center; }
+
+/* ==========================================================================
+   5. PERFIL DO USUÁRIO (FIXO NO TOPO DIREITO)
+   ========================================================================== */
+.user-profile { position: fixed; top: 30px; right: 40px; z-index: 1000; }
+.user-profile a { color: var(--text-primary); text-decoration: none; }
+.user-profile i { font-size: 1.8em; transition: color 0.3s ease; }
+.user-profile:hover i { color: #1a3d63; }
 .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-width: 160px;
-    z-index: 1000;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px); /* Efeito sutil de deslizar para baixo */
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-.user-profile:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0); 
-}
-
-.dropdown-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-menu ul li a {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #0c2c47;
-    font-size: 0.9em;
-}
-
-.dropdown-menu ul li a:hover {
-    background-color: #f5f5f5;
-}
-
-.dropdown-menu ul li a i {
-    margin-right: 15px;
-    width: 20px;
-}
-
-.corner-shape {
-    position: absolute;
-    width: 30vw; /* Ocupa 30% da largura da tela */
-    max-width: 400px; /* Mas não passa de 400px */
-    z-index: 0; /* Garante que fique atrás do conteúdo de login */
-    
-}
-
-/* Posiciona o primeiro detalhe */
-.corner-shape.top-left {
-    top: 0;
-    left: 0;
-}
-
-/* Posiciona o segundo detalhe */
-.corner-shape.bottom-right {
-    bottom: 0;
-    right: 0;
-    transform: rotate(180deg); /* Gira o SVG para que fique no canto oposto */
-}
-
-/* Garante que o container de login fique na frente dos detalhes */
-.login-container {
-    position: relative;
-    z-index: 1;
-}
-
-.google {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #F5F0E8;
-    border-radius: 50%; /* Deixa o botão redondo */
-    background-color: #F5F0E8;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg'); /* Ícone do Google */
-    background-size: 24px;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
+    position: absolute; top: 100%; right: 0; margin-top: 10px;
+    background-color: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 160px; opacity: 0; visibility: hidden; transform: translateY(-10px);
     transition: all 0.3s ease;
-    margin-top: 10px;
 }
+.user-profile:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu ul { list-style: none; padding: 0; margin: 0; }
+.dropdown-menu a { display: flex; align-items: center; padding: 12px 20px; color: var(--text-primary); text-decoration: none; }
+.dropdown-menu a:hover { background-color: #f5f5f5; }
+.dropdown-menu i { margin-right: 15px; width: 20px; text-align: center; }
 
-.google:hover {
-    border-color: #F5F0E8;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.user-cadastro{
-    width: 100%;
-    max-width: 550px;
-    text-align: center;
-}
-#pre-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background-color: #F5F0E8; /* Ou use sua variável --bg-primary */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Aplica a animação de desaparecimento em TODAS as cargas de página */
-    animation: hidePreloader 2s forwards;
-}
-
-/* A bola de carregamento (spinner) */
-.loader {
-    border: 8px solid #e0e0e0;
-    border-top: 8px solid #0c2c47; /* Ou use sua variável --text-primary */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1.2s linear infinite; /* Animação de rotação */
-}
-
-/* 2. ESTILO DO CONTEÚDO PRINCIPAL */
-/* Por padrão, o conteúdo começa invisível e a animação 'showContent' é aplicada sempre. */
-#page-content {
-    opacity: 0;
-    animation: showContent 1.2s forwards;
-}
-
+/* ==========================================================================
+   6. PÁGINA DE RELATÓRIOS (RESTAURADA)
+   ========================================================================== */
 .dashboard-cards {
     display: grid;
-    
-    /* A MÁGICA ESTÁ AQUI: */
-    /* Cria exatamente 2 colunas de tamanho igual (1fr significa 1 fração do espaço) */
-    grid-template-columns: 1fr 1fr; 
-    
-    /* Espaçamento entre as linhas e colunas */
-    gap: 30px; 
-    
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     margin-bottom: 40px;
+    width: 100%; max-width: 900px;
 }
-
-/* Os estilos individuais do .card permanecem os mesmos */
 .card {
-    background-color: transparent; /* FUNDO TRANSPARENTE, como na imagem */
-    color: var(--text-primary); /* Texto com a cor principal */
-    padding: 20px;
-    border-radius: 12px;
+    background-color: transparent;
+    color: #222222; /* MUDOU: Cor base do texto para quase preto */
+    padding: 20px; border-radius: 12px;
 }
-
 .card h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: var(--text-primary);
-    opacity: 0.8;
+    margin: 0 0 10px 0; font-size: 1.1em; font-weight: 500;
+    color: #666666; /* MUDOU: Título do card em cinza para hierarquia */
 }
-
 .card .card-value {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: 600;
-    color: var(--text-primary);
+    margin: 0; font-size: 2.5em; font-weight: 600;
+    color: #000000; /* MUDOU: Valor em preto puro para destaque */
 }
-/* 2. Container Branco Principal */
+
 .report-container {
-    background-color: #FFFFFF;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 4px 20px var(--shadow-color, rgba(0, 0, 0, 0.05));
+    background-color: #FFFFFF; border-radius: 15px; padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); width: 100%; max-width: 900px;
+    box-sizing: border-box;
+    color: #222222; /* MUDOU: Cor padrão do texto dentro do container branco */
 }
-
-/* 3. Filtros */
-.report-filters {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
+.report-filters { display: flex; gap: 20px; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; }
 .filter-group { display: flex; flex-direction: column; }
-.filter-group label { font-size: 0.9em; font-weight: 500; margin-bottom: 8px; color: var(--text-primary); }
-.filter-group input, .filter-group select { padding: 12px 15px; border: 1.5px solid var(--border-color); border-radius: 8px; background-color: transparent; font-family: 'Poppins', sans-serif; font-size: 1em; color: var(--text-primary); }
-.primary-button { padding: 12px 30px; border: none; border-radius: 8px; background-color: var(--bg-secondary); color: var(--text-secondary); font-family: 'Poppins', sans-serif; font-size: 1em; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease; }
-.primary-button:hover { background-color: var(--text-primary); }
+.filter-group label {
+    font-size: 0.9em; font-weight: 500; margin-bottom: 8px;
+    color: #222222; /* MUDOU: Labels em preto/cinza escuro */
+}
 
-/* 4. Visualização de Dados (Gráfico e Tabela) */
+/* Ajuste específico para inputs dentro dos filtros para serem pretos */
+.filter-group input, .filter-group select {
+    color: #222222 !important; /* Força a cor preta nos inputs deste grupo */
+    border-color: #cccccc; /* Borda um pouco mais suave que o azul */
+}
+.filter-group input:focus, .filter-group select:focus {
+    border-color: var(--text-primary); /* Mantém o foco azul para identidade visual */
+}
+
 .report-display h2 { font-size: 1.5em; font-weight: 600; color: var(--text-primary); margin-bottom: 20px; }
 .report-chart { margin-bottom: 40px; }
 .report-table table { width: 100%; border-collapse: collapse; text-align: left; }
-.report-table th, .report-table td { padding: 15px; border-bottom: 1px solid var(--border-color); }
-.report-table thead { background-color: rgba(0, 0, 0, 0.02); }
-.report-table th { font-weight: 600; color: var(--text-primary); }
+.report-table th, .report-table td {
+    padding: 15px; border-bottom: 1px solid #e0e0e0;
+    color: #222222; /* MUDOU: Texto da tabela em preto/cinza escuro */
+}
+.report-table thead { background-color: #f9f9f9; }
+.report-table th {
+    font-weight: 600;
+    color: #000000; /* MUDOU: Cabeçalho da tabela em preto puro */
+}
 .status { padding: 5px 10px; border-radius: 20px; font-size: 0.8em; font-weight: 500; }
 .status.pago { background-color: #d4edda; color: #155724; }
 .status.pendente { background-color: #fff3cd; color: #856404; }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(2000deg); }
+/* ==========================================================================
+   7. ELEMENTOS DE UI GERAIS
+   ========================================================================== */
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
+    width: 100%; padding: 15px 20px; margin-bottom: 15px;
+    border-radius: 50px; border: 1px solid var(--text-primary);
+    background-color: transparent; font-size: 16px;
+    box-sizing: border-box; color: var(--text-primary);
+}
+input:focus, select:focus { outline: none; border-color: #1a3d63; }
+::placeholder { color: var(--text-primary); opacity: 0.7; }
+
+button, .primary-button {
+    width: 100%; padding: 15px; border: none; border-radius: 50px;
+    background-color: var(--bg-secondary); color: var(--text-light);
+    font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;
+}
+button:hover, .primary-button:hover { background-color: #1a3d63; }
+
+.user-category { width: 100%; max-width: 900px; margin-bottom: 40px; }
+.user-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; width: 100%; }
+.user-card {
+    display: flex; flex-direction: column; justify-content: space-between;
+    background-color: var(--bg-secondary); color: var(--text-light);
+    border-radius: 15px; padding: 20px; aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; text-decoration: none;
+}
+.user-card:hover { transform: translateY(-5px); }
+.card-header { display: flex; align-items: center; font-size: 1.1em; font-weight: 500; }
+.card-header i { font-size: 1.5em; margin-right: 15px; }
+.card-actions { display: flex; justify-content: space-between; }
+.action-btn {
+    background: none; border: none; font-size: 1em; cursor: pointer;
+    padding: 5px 10px; border-radius: 5px; color: inherit; text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+.action-btn:hover { background-color: rgba(255, 255, 255, 0.2); }
+
+.google {
+    width: 50px; height: 50px; margin-top: 10px; border-radius: 50%;
+    background-color: var(--bg-primary); border: 1px solid var(--bg-primary);
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg');
+    background-size: 24px; background-position: center; background-repeat: no-repeat;
+    transition: all 0.3s ease; cursor: pointer;
+}
+.google:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* --- Estilo da Barra de Prontuário --- */
+.prontuario-bar {
+    display: flex;             /* Alinha ícone e texto lado a lado */
+    align-items: center;       /* Centraliza verticalmente */
+    width: 100%;               /* Ocupa a largura disponível */
+    max-width: 800px;          /* Mas não deixa ficar largo demais em telas grandes */
+    
+    background-color: #0c2c47; /* Cor padrão do seu sistema */
+    color: #FFFFFF;            /* Texto branco */
+    
+    padding: 20px 25px;        /* Espaçamento interno */
+    border-radius: 12px;       /* Bordas arredondadas */
+    text-decoration: none;     /* Remove o sublinhado do link */
+    margin-bottom: 15px;       /* Espaço se tiver mais de um */
+    
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* Animação que esconde o preloader */
-@keyframes hidePreloader {
-    0%   { opacity: 1; visibility: visible; }
-    75%  { opacity: 1; visibility: visible; }
-    100% { opacity: 0; visibility: hidden; }
+/* Efeito opcional ao passar o mouse */
+.prontuario-bar:hover {
+    background-color: #1a3d63; /* Um tom ligeiramente mais claro para feedback */
+    transform: translateX(5px); /* Move um pouquinho para a direita */
 }
 
-/* Animação que mostra o conteúdo principal */
-@keyframes showContent {
-    0%   { opacity: 0; }
-    75%  { opacity: 0; }
-    100% { opacity: 1; }
+/* Estilo do Ícone */
+.prontuario-bar i {
+    font-size: 1.4em;
+    margin-right: 20px;       /* Espaço entre o ícone e o texto */
 }
 
-@keyframes showContent {
-    0% { opacity: 0; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
+/* Estilo do Texto */
+.prontuario-bar span {
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 1px;      /* Leve espaçamento entre letras */
+    text-transform: uppercase; /* Garante que fique tudo em MAIÚSCULAS */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ==========================================================================
+   7.1. CARDS DE USUÁRIO (VERIFICAR USUÁRIOS - COM BOTÕES DE AÇÃO)
+   ========================================================================== */
+.user-category {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 50px;
 }
+
+.content-main.align-start {
+    justify-content: flex-start; /* Alinha no topo verticalmente */
+    align-items: flex-start;     /* Alinha à esquerda horizontalmente */
+    padding-left: 100px;
+}
+
+.content-main.align-start h2{
+    color:#000000;
+}
+
+.user-grid {
+    display: grid;
+    /* Cria colunas responsivas de no mínimo 200px */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.user-card {
+    /* Define o card como um container flexível vertical para alinhar topo e base */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o header para cima e as ações para baixo */
+    
+    background-color: var(--bg-secondary); /* Cor azul da sidebar (#0c2c47) */
+    color: var(--text-light); /* Texto branco */
+    
+    border-radius: 15px;
+    padding: 20px;
+    aspect-ratio: 1 / 1; /* Mantém o formato quadrado */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove sublinhado caso use <a> por engano */
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Cabeçalho do Card (Ícone + Nome do Usuário) */
+.card-header {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.card-header i {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+/* Container dos Botões de Ação (Visualizar / Editar) */
+.card-actions {
+    display: flex;
+    justify-content: space-between; /* Espalha os botões para os cantos */
+}
+
+/* Estilo dos Botões dentro do Card */
+.action-btn {
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif; /* Garante a fonte correta */
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: inherit; /* Herda a cor branca do card */
+    text-decoration: none; /* Remove sublinhado se for usado <a> */
+    transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil ao passar o mouse */
+}
+
+/* ==========================================================================
+   8. ANIMAÇÕES
+   ========================================================================== */
+#pre-loader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;
+    background-color: var(--bg-primary); display: flex; justify-content: center; align-items: center;
+    animation: hidePreloader 2s forwards;
+}
+.loader {
+    border: 8px solid #e0e0e0; border-top: 8px solid var(--text-primary);
+    border-radius: 50%; width: 60px; height: 60px; animation: spin 1.2s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hidePreloader { 0%, 75% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
