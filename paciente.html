@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/png" href="images/icon-unissoriso.png">
-    <title>Usuario - UniSorriso</title>
+    <title>Perfil do Paciente - UniSorriso</title>
 </head>
 <body>
     <div class="user-profile">
@@ -69,3 +69,64 @@
             </li>
         </ul>
     </nav>
+    <main class="content-main align-start">
+        <header class="content-header">
+            <h1 class="page-title">Perfil do Paciente</h1>
+        </header>
+
+        <section class="patient-profile-card">
+            <div class="profile-header">
+                <i class="fa-solid fa-user-circle"></i>
+                <h2>PACIENTE TESTE</h2>
+            </div>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-id-card"></i> Idade:</strong>
+                    <span>30 anos</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-phone"></i> Telefone:</strong>
+                    <span>(XX) XXXX-XXXX</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-envelope"></i> Email:</strong>
+                    <span>pacienteteste@email.com</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Histórico de Consultas</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <span><i class="fa-solid fa-calendar-alt"></i> 15/03/2024 - Limpeza e Avaliação</span>
+                    <span class="status-tag completed"><i class="fa-solid fa-check-circle"></i> Concluída</span>
+                </div>
+                <div class="history-item">
+                    <span><i class="fa-solid fa-calendar-alt"></i> 20/02/2024 - Extração de Siso</span>
+                    <span class="status-tag completed"><i class="fa-solid fa-check-circle"></i> Concluída</span>
+                </div>
+                <div class="history-item">
+                    <span><i class="fa-solid fa-calendar-alt"></i> 10/04/2024 - Retorno (Agendado)</span>
+                    <span class="status-tag pending"><i class="fa-solid fa-hourglass-half"></i> Pendente</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Histórico de Pagamentos</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <span><i class="fa-solid fa-money-bill-wave"></i> 15/03/2024 - Limpeza (R$ 150,00)</span>
+                    <span class="status-tag paid"><i class="fa-solid fa-wallet"></i> Pago</span>
+                </div>
+                <div class="history-item">
+                    <span><i class="fa-solid fa-money-bill-wave"></i> 20/02/2024 - Extração (R$ 400,00)</span>
+                    <span class="status-tag paid"><i class="fa-solid fa-wallet"></i> Pago</span>
+                </div>
+                <div class="history-item">
+                    <span><i class="fa-solid fa-money-bill-wave"></i> 10/04/2024 - Retorno (R$ 0,00)</span>
+                    <span class="status-tag free"><i class="fa-solid fa-tag"></i> Gratuito</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
