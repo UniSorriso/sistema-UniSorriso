@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/icon-unissoriso.png">
+    <title>Inicio - UniSorriso</title>
+</head>
+<body class="welcome-page">
+    <div id="page-content">
+        <div class="user-profile">
+            <a href="#">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <div class="dropdown-menu">
+                <ul>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/unisorrisobbranco (1).png" alt="Logo UniSorriso">
+                <h2>UniSorriso V1.0</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cadasUser.html">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Cadastrar usuario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="verUsers.html">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Verificar usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorio.html">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Gerar relatorio financeiro</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="agenda.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Consultar agenda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="verPontuario.html">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span>Consultar pontuarios</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content-main">
+            <section class="patient-profile-card">
+            <div class="profile-header">
+                <i class="fa-solid fa-user-circle"></i>
+                <h2>DENTISTA TESTE</h2>
+            </div>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-id-card"></i> Setor:</strong>
+                    <span>Dentistas</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-user"></i> Login:</strong>
+                    <span>dent.teste</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-envelope"></i> Email:</strong>
+                    <span>denttest@email.com</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-lock"></i> Senha:</strong>
+                    <span>123456</span>
+                </div>
+            </div>
+        <div class="title-user-edit">
+            <h2>Editar Dentista</h2>
+        </div>
+        <form class="user-edit" action="confirmedit.html">
+            <label for="edit-email">Email</label>
+            <input type="text" placeholder="usermail@outlook.com">
+            <label for="edit-email">Login</label>
+            <input type="text" placeholder="user.login">
+            <label for="edit-email">Senha</label>
+            <input type="text" placeholder="******">
+            <label for="edit-email">Setor</label>
+            <input type="text" placeholder="Recepção">
+            <button type="submit" class="primary-button">Salvar</button>
+            <button type="button" class="secondary-button" onclick="history.back()">Voltar</button>
+        </form>   
+    </main>
+    </div>
+</body>
+</html>
