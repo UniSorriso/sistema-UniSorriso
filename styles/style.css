@@ -177,6 +177,139 @@ button, input, select, textarea, .action-btn, .primary-button {
 .status.pago { background-color: #d4edda; color: #155724; }
 .status.pendente { background-color: #fff3cd; color: #856404; }
 
+
+/* --- 6.1. Perfil do Paciente --- */
+.patient-profile-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 800px; /* Limita a largura do card para ficar centralizado mas não muito largo */
+    box-sizing: border-box;
+    color: #333333; /* Cor de texto padrão dentro do card */
+    margin-top: 30px; /* Espaço entre o título da página e o card */
+}
+
+.patient-profile-card .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.patient-profile-card .profile-header i {
+    font-size: 3.5em; /* Ícone maior para o perfil */
+    color: var(--text-primary);
+    margin-right: 20px;
+}
+
+.patient-profile-card .profile-header h2 {
+    font-size: 2em;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 700;
+}
+
+.patient-profile-card .profile-details {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para detalhes */
+    gap: 20px 30px;
+}
+
+.patient-profile-card .detail-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.patient-profile-card .detail-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.patient-profile-card .detail-item strong i {
+    font-size: 0.9em;
+    margin-right: 8px;
+    color: #666666;
+}
+
+.patient-profile-card .detail-item span {
+    color: #555555;
+}
+
+.patient-profile-card .section-title {
+    font-size: 1.5em;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.patient-profile-card .history-list {
+    margin-bottom: 30px;
+}
+
+.patient-profile-card .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #444444;
+}
+
+.patient-profile-card .history-item i {
+    margin-right: 10px;
+    color: #777777;
+}
+
+/* Tags de Status */
+.status-tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.status-tag.completed { background-color: #d4edda; color: #155724; } /* Verde para concluído */
+.status-tag.pending { background-color: #fff3cd; color: #856404; }   /* Amarelo para pendente */
+.status-tag.paid { background-color: #cfe2ff; color: #053c7a; }      /* Azul claro para pago */
+.status-tag.free { background-color: #e2e3e5; color: #495057; }      /* Cinza para gratuito */
+
+/* --- Container dos Botões do Formulário --- */
+.form-actions {
+    display: flex;
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 15px;              /* O SEGREDO: cria um espaço de 15px entre eles */
+    margin-top: 30px;       /* Dá um espaço extra acima do primeiro botão */
+}
+
+/* Opcional: Estilo diferente para o botão "Voltar" (Secondary) */
+/* Se você quiser que ele tenha uma cor diferente para diferenciar do "Salvar" */
+.secondary-button {
+    background-color: transparent;
+    border: 2px solid var(--bg-secondary);
+    color: var(--bg-secondary);
+    margin-top: 15px
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+}
+
 /* ==========================================================================
    7. ELEMENTOS DE UI GERAIS
    ========================================================================== */
@@ -242,6 +375,30 @@ button:hover, .primary-button:hover { background-color: #1a3d63; }
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+/*--- estilo barra de editar perfil ---*/
+.user-edit-bar {
+    display: flex;             /* Alinha ícone e texto lado a lado */
+    align-items: center;       /* Centraliza verticalmente */
+    width: 100%;               /* Ocupa a largura disponível */
+    max-width: 80px;    
+    justify-content: center;      
+    
+    background-color: #0c2c47; 
+    color: #FFFFFF;            
+    
+    padding: 20px 25px;        /* Espaçamento interno */
+    border-radius: 12px;       /* Bordas arredondadas */
+    text-decoration: none;     /* Remove o sublinhado do link */
+    margin-bottom: 15px;       /* Espaço se tiver mais de um */
+    
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.user-edit-bar:hover {
+    background-color: #1a3d63; /* Um tom ligeiramente mais claro para feedback */
+    transform: translateX(5px); /* Move um pouquinho para a direita */
+}
+
 /* Efeito opcional ao passar o mouse */
 .prontuario-bar:hover {
     background-color: #1a3d63; /* Um tom ligeiramente mais claro para feedback */
@@ -260,6 +417,73 @@ button:hover, .primary-button:hover { background-color: #1a3d63; }
     font-weight: 500;
     letter-spacing: 1px;      /* Leve espaçamento entre letras */
     text-transform: uppercase; /* Garante que fique tudo em MAIÚSCULAS */
+    
+}
+
+.user-edit {
+    display: flex;
+    flex-direction: column; /* Empilha tudo verticalmente */
+    width: 100%;
+    max-width: 400px;       /* Limita a largura para ficar elegante */        
+}
+
+/* 2. Estilo das Labels (Títulos dos campos) */
+.user-edit label {
+    text-align: left;       /* Garante que o texto fique à esquerda */
+    font-weight: 500;
+    font-size: 0.95em;
+    color: #0c2c47;         /* Cor azul do seu tema (ajuste se usar variável) */
+    margin-bottom: 8px;     /* Espaço entre o label e o input abaixo dele */
+    margin-left: 15px;      /* Pequeno recuo para alinhar com o início do texto dentro do input */
+}
+
+/* 3. Estilo dos Inputs */
+.user-edit input {
+    padding: 15px 20px;
+    margin-bottom: 20px;    /* Espaço importante até o próximo label */
+    border: 1.5px solid #0c2c47;
+    border-radius: 50px;    /* Bordas redondas (formato pílula) */
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    color: #0c2c47;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    width: 100%;
+}
+
+/* 4. Estilo dos Botões */
+.user-edit button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botão Principal (Salvar) */
+.user-edit .primary-button {
+    background-color: #0c2c47;
+    color: white;
+    border: none;
+    margin-top: 10px; /* Espaço extra antes dos botões começarem */
+}
+.user-edit .primary-button:hover {
+    background-color: #1a3d63; /* Um pouco mais claro ao passar o mouse */
+}
+
+/* Botão Secundário (Voltar) */
+.user-edit .secondary-button {
+    background-color: transparent;
+    color: #0c2c47;
+    border: 2px solid #0c2c47;
+    margin-top: 15px; /* O ESPAÇO ENTRE OS BOTÕES FICA AQUI */
+}
+.user-edit .secondary-button:hover {
+    background-color: #0c2c47;
+    color: white;
 }
 
 /* ==========================================================================
