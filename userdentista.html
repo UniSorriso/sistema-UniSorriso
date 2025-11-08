@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/icon-unissoriso.png">
+    <title>Usuario - UniSorriso</title>
+</head>
+<body>
+    <div class="user-profile">
+        <a href="#">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <div class="dropdown-menu">
+            <ul>
+                <li>
+                    <a href="login.html">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/unisorrisobbranco (1).png" alt="Logo UniSorriso">
+            <h2>UniSorriso V1.0</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="cadasUser.html">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Cadastrar usuario</span>
+                </a>
+            </li>
+            <li>
+                <a href="verUsers.html">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Verificar usuarios</span>
+                </a>
+            </li>
+            <li>
+                <a href="relatorio.html">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span>Gerar relatorio financeiro</span>
+                </a>
+            </li>
+            <li>
+                <a href="agenda.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Consultar agenda</span>
+                </a>
+            </li>
+            <li>
+                <a href="verPontuario.html">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Consultar pontuarios</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="content-main align-start">
+        <header class="content-header">
+            <h1 class="page-title">Perfil do Dentista</h1>
+        </header>
+
+        <section class="patient-profile-card">
+            <div class="profile-header">
+                <i class="fa-solid fa-user-circle"></i>
+                <h2>DENTISTA TESTE</h2>
+            </div>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-id-card"></i> Setor:</strong>
+                    <span>Dentistas</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-user"></i> Login:</strong>
+                    <span>dent.teste</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-envelope"></i> Email:</strong>
+                    <span>denttest@email.com</span>
+                </div>
+                <div class="detail-item">
+                    <strong><i class="fa-solid fa-lock"></i> Senha:</strong>
+                    <span>123456</span>
+                </div>
+            </div>
+
+            <a href="editdentista.html" class="user-edit-bar">
+                <span>Editar</span>
+            </a>
+
+            <h3 class="section-title">Atividades Recentes</h3>
+                <div class="history-list">
+                        <div class="history-item">
+                            <span><i class="fa-solid fa-user-plus"></i> Editou setor de "USUARIO TESTE"</span>
+                            <span class="status-tag completed">Hoje, 13:15</span>
+                        </div>
+                    <div class="history-item">
+                        <span><i class="fa-solid fa-calendar-check"></i> Gerou relatorio financeiro mensal</span>
+                        <span class="status-tag completed">Ontem, 22:40</span>
+                    </div>
+                </div>
+
+            <h3 class="section-title">Níveis de Acesso</h3>
+                <div class="history-list">
+                    <div class="history-item">
+                        <span><i class="fa-solid fa-users"></i> Gerenciar Pacientes</span>
+                        <span class="status-tag completed"><i class="fa-solid fa-check"></i> Acesso Total</span>
+                    </div>
+                    <div class="history-item">
+                        <span><i class="fa-solid fa-calendar-days"></i> Agenda e Consultas</span>
+                        <span class="status-tag completed"><i class="fa-solid fa-check"></i> Acesso Total</span>
+                    </div>
+                    <div class="history-item">
+                        <span><i class="fa-solid fa-chart-line"></i> Relatórios Financeiros</span>
+                        <span class="status-tag completed"><i class="fa-solid fa-eye"></i> Acesso Total</span>
+                    </div>
+                </div>
+            <h3 class="section-title">Estatísticas do Mês</h3>
+
+                <div class="history-list">
+    
+                    <div class="history-item">
+                        <span>
+                            <i class="fa-solid fa-calendar-check"></i> 
+                            Consultas Realizadas
+                        </span>
+                        <span class="metric-value">45</span>
+                    </div>
+
+                    <div class="history-item">
+                        <span>
+                            <i class="fa-solid fa-user-plus"></i> 
+                            Pacientes Cadastrados
+                        </span>
+                        <span class="metric-value">12</span>
+                    </div>
+
+                    <div class="history-item">
+                        <span>
+                            <i class="fa-solid fa-chart-line"></i> 
+                            Taxa de Comparecimento
+                        </span>
+                        <span class="status-tag completed">95%</span>
+                    </div>
+
+</div>
+        </section>
+    </main>
+</body>
+</html>
